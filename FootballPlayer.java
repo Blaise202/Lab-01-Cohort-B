@@ -78,9 +78,9 @@ public class FootballPlayer {
 
     // task 6
     System.out.print("Coach please enter the player's jersey number: ");
-    int jerseyNumberFromCoach  = scanner.nextInt()
+    int jerseyNumberFromCoach  = scanner.nextInt();
     String position;
-    switch(jerseyNumber){
+    switch(jerseyNumberFromCoach){
       case 1:
         position = "Goalkeeper";
         break;
@@ -107,14 +107,70 @@ public class FootballPlayer {
         break;
       default:
         position = "Player position not known";
+        break;
     }
-
     System.out.println(position);
 
-    // task 7
-    switch(jerseyNumber){
+    // task 7 Part B
+    switch(jerseyNumberFromCoach){
+      case 1:
+        System.out.println("GoalKeeper");
+        break;
       case 2:
-
+        System.out.println("Defender");
+      case 6:
+        System.out.println("Midfielder");
+      case 7:
+        System.out.println("Winger");
+        break;
+      case 9:
+        System.out.println("Striker");
+        break;
+      default:
+        System.out.println("Player position not known");
+        break;
     }
+
+    // task 7 Part B
+    switch (jerseyNumberFromCoach) {
+      case 2:
+        System.out.println("Defender");
+        break;
+      case 6:
+      case 8:
+        System.out.println("Midfielder");
+        break;
+      case 7:
+      case 11:
+        System.out.println("Winger");
+        break;
+      case 9:
+        System.out.println("Striker");
+        break;
+      case 1:
+        System.out.println("Goalkeeper");
+        break;
+      case 10:
+        System.out.println("Playmaker");
+        break;
+      default:
+        System.out.println("Player position not known");
+        break;
+    }
+
+    // Task 8
+    if (category == "Prime Player") {
+      if (weightInKilograms < 80) {
+        System.out.println("Player " + name + " is selected for the starting lineup.");
+      }else {
+        System.out.println("Player " + name + " is on the bench.");
+      }
+    } else {
+      System.out.println("Player " + name + " is on the bench.");
+    }
+
+    // Task 9
+    String eligibility = (age >=18 && age <= 35 && weightInKilograms < 90) ? "Eligible" : "Not Eligible";
+    System.out.println(eligibility);
   }
 }
